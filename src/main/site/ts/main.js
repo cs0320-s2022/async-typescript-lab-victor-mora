@@ -36,7 +36,7 @@ function postAndUpdate() {
     //  HINT: check out the POST REQUESTS section of the lab and of the front-end guide.
     //  Make sure you add "Access-Control-Allow-Origin":"*" to your headers.
     //  Remember to add a type annotation for the response data using the Matches type you defined above!
-    fetch('http://localhost:8080/results', {
+    fetch('http://localhost:8080', {
         // Request method
         method: 'post',
         // Data in JSON format to send in the request
@@ -44,7 +44,7 @@ function postAndUpdate() {
         // HTTP headers to tell the receiving server what format the data is in
         headers: {
             'Content-Type': 'application/json; charset=UTF-8',
-            "Access-Control-Allow-Origin": "*"
+            "Access-Control-Allow-Origin": "*",
         },
     })
         .then((response) => response.json())
@@ -70,7 +70,7 @@ function updateSuggestions(matches) {
 //  updated before calling postAndUpdate().
 document.addEventListener("keyup", (event) => __awaiter(void 0, void 0, void 0, function* () {
     if (event.code === "KeyQ") {
-        yield updateValues("a", "b", "c");
+        yield updateValues("Aries", "Aries", "Aries");
         postAndUpdate();
     }
 }));

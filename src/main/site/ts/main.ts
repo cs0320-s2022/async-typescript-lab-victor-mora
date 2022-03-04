@@ -30,7 +30,7 @@ function postAndUpdate(): void {
   suggestions.innerHTML = ''
 
   // TODO: add a type annotation to make this of type MatchesRequestData
-  const postParameters = {
+  const postParameters: MatchesRequestData = {
     // TODO: get the text inside the input box
     //  HINT: use sun.value to get the value of the sun field, for example
     sunSign: sun.value,
@@ -45,7 +45,7 @@ function postAndUpdate(): void {
   //  HINT: check out the POST REQUESTS section of the lab and of the front-end guide.
   //  Make sure you add "Access-Control-Allow-Origin":"*" to your headers.
   //  Remember to add a type annotation for the response data using the Matches type you defined above!
-  fetch('http://localhost:8080/results', {
+  fetch('http://localhost:8080', {
     // Request method
     method: 'post',
     // Data in JSON format to send in the request
@@ -53,7 +53,7 @@ function postAndUpdate(): void {
     // HTTP headers to tell the receiving server what format the data is in
     headers: {
       'Content-Type': 'application/json; charset=UTF-8',
-      "Access-Control-Allow-Origin":"*"
+      "Access-Control-Allow-Origin":"*",
     },
   })
       .then((response) => response.json())
@@ -82,7 +82,7 @@ function updateSuggestions(matches: string[]): void {
 //  updated before calling postAndUpdate().
 document.addEventListener("keyup",async (event) => {
   if (event.code === "KeyQ") {
-    await updateValues("a", "b", "c");
+    await updateValues("Aries", "Aries", "Aries");
     postAndUpdate();
   }
 
