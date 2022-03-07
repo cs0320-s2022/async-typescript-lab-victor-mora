@@ -86,7 +86,7 @@ public final class Main {
     Spark.before((request, response) -> response.header("Access-Control-Allow-Origin", "*"));
 
     // (is this where the todo goes? For each route handler, run and replace with the correct names
-    Spark.post("http://localhost:8080", new ResultsHandler()); //is this the right route?
+    Spark.post("http://localhost:4567/results", new ResultsHandler()); //is this the right route?
     // Add whatever class you have that handles server exceptions
     Spark.exception(Exception.class, new ExceptionPrinter());
   }
