@@ -44,7 +44,8 @@ function postAndUpdate() {
         // HTTP headers to tell the receiving server what format the data is in
         headers: {
             'Content-Type': 'application/json; charset=UTF-8',
-            "Access-Control-Allow-Origin": "*",
+            'Access-Control-Allow-Origin': '*',
+            //'Access-Control-Allow-Origin':'/results',
         },
     })
         .then((response) => response.json())
@@ -68,9 +69,9 @@ function updateSuggestions(matches) {
 //  values for the sun, moon, and rising using updateValues. Then call postAndUpdate().
 //  HINT: the listener callback function should be asynchronous and wait until the values are
 //  updated before calling postAndUpdate().
-document.addEventListener("keyup", (event) => __awaiter(void 0, void 0, void 0, function* () {
-    if (event.code === "KeyQ") {
-        yield updateValues("Aries", "Aries", "Aries");
+document.addEventListener('keyup', (event) => __awaiter(void 0, void 0, void 0, function* () {
+    if (event.code === 'KeyQ') {
+        yield updateValues('Aries', 'Aries', 'Aries');
         postAndUpdate();
     }
 }));
