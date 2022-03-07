@@ -126,9 +126,9 @@ public final class Main {
       try {
         // Put the request's body in JSON format
         reqJson = new JSONObject(req.body());
-        sun = (String) reqJson.get("sun");
-        moon = (String) reqJson.get("moon");
-        rising = (String) reqJson.get("rising");
+        sun = (String) reqJson.get("sunSign");
+        moon = (String) reqJson.get("moonSign");
+        rising = (String) reqJson.get("risingSign");
       } catch (JSONException e) {
         e.printStackTrace();
       }

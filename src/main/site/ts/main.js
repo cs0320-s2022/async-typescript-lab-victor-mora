@@ -61,7 +61,7 @@ function updateSuggestions(matches) {
     //  make sure to add the attribute 'tabindex="0"' (for example: <li tabindex="0">{your element}</li>).
     //  This makes each element selectable via screen reader.
     for (let i = 0; i < matches.length; i++) {
-        suggestions.innerHTML += '<li tabindex="0">{matches[i]}</li>';
+        suggestions.innerHTML += '<li tabindex="0">' + matches[i] + '</li>';
     }
 }
 // TODO: create an event listener to the document (document.addEventListener) that detects "keyup".
